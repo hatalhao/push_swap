@@ -1,0 +1,19 @@
+-	Fill The Stack
+
+-	libft:
+	+	split()
+		printf()
+		get_next_line()
+
+- Sort 4
+- Sort 5
+
+- Sort 100
+
+
+Errors To Cover: 
+	- Alphabets
+	- Symbols
+	- Identicals
+	- Out of integer range
+	- 
