@@ -33,13 +33,12 @@ int main(int argc, char **argv)
 		sort_five(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) > 5)
 		the_sort(stack_a, stack_b, args, ft_lstsize(*stack_a));
-	// the_sort(stack_a, stack_b, args, ft_lstsize(*stack_a));
 	// printf("********************************\n");
 	// printf("A\n");
 	// print_list(*stack_a);
 	// printf("********************************\n");
 	// printf("B\n");
-	// print_list(*stack_b);
+	print_list(*stack_b);
 	i = 0;
 	while (args[i])
 		free (args[i++]);

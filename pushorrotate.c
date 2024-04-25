@@ -58,23 +58,22 @@ void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 		{
 			ft_pb(stack_a, stack_b);
 			ft_rotate(stack_b, "rb");
-				if (end < size)
-					end++;
-				start++;
+			start++;
+			if (end < size)
+				end++;
 		}
-		else if (within_range(arr ,start, end , (*stack_a)->nbr) == 0)
+		else if (within_range(arr, start, end, (*stack_a)->nbr) == 0)
 		{
 			ft_pb(stack_a, stack_b);
+			start++;
 			if (end < size)
 					end++;
-			start++;
 		}		
 		else
 			ft_rotate(stack_a, "ra");
+		if (end == size && (ft_lstsize(*stack_a)))
+			start--;
 	}
-	// print_list(*stack_a);
-	// print_list(*stack_b);
-
 }
 
 int		ft_ranger(int size)
