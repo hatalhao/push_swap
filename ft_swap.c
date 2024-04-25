@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 06:48:27 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/03/30 02:28:57 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:47:52 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_swap(t_list **first, char *str)
 	(*first)->next = swap;
 	(*first)->next->next = link;
 	if (str)
-		printf("%s\n", str);
+		ft_printf("%s\n", str);
 }

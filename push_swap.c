@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:28:23 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/03/29 14:55:20 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:48:08 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 // 	while (ft_parse(av[i]))
 // 	{
 // 		if (!ft_parse(&av[i]))
-// 			printf("Error\n");
+// 			("Error\n");
 // 		i++;
 // 	}
 // 	push_swap(stack_a, stack_b);

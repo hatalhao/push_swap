@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:26 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/18 01:51:27 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 05:25:26 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	ft_reverse_rotate(t_list **stack, char *str)
 		iter = iter->next;
 	}
 	if (str)
-		printf("%s\n", str);
+		ft_printf("%s\n", str);
 	}

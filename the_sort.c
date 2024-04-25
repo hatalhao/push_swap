@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:52:12 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/24 05:40:32 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:41:09 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	the_sort(t_list **stack_a, t_list **stack_b, char **args, int size)
 	if (!arr)
 		return ;
 	fill_array(&arr, args, size);
-	while (arr[i])
+	while (i < size)
 	{
-		while (arr[j])
+		while (j < size)
 		{
 			if (arr[i] < arr[j])
 				swap_array(arr + i, arr + j);
@@ -65,9 +65,6 @@ void	the_sort(t_list **stack_a, t_list **stack_b, char **args, int size)
 		i++;
 		j = 0;
 	}
-	// for (int k = 0; k < 100 ; k++)
-	// 	printf("---> %d\n", arr[k]);
-	// sleep (3);
 	pushorrotate(stack_a, stack_b, arr, size);
 	free (arr);
 }

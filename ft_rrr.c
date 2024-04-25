@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:36 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/18 01:51:37 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:47:48 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_rrr(t_list **stacka, t_list **stackb)
 {
 	ft_reverse_rotate(stacka, NULL);
 	ft_reverse_rotate(stackb, NULL);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }

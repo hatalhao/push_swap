@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/talhaoui/42_Cursus_REPO/custom/push_swap_ProMax",
-      "program": "/home/talhaoui/42_Cursus_REPO/custom/push_swap_ProMax/build/Debug/outDebug",
+      "cwd": "/Users/hatalhao/Desktop/Pro_Max",
+      "program": "/Users/hatalhao/Desktop/Pro_Max/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -19,7 +19,7 @@ char	*ft_strdup(char const *src)
 
 	if (!src)
 		return (NULL);
-	duplicate = (char *) malloc ((ft_strlen(src) + 1) * sizeof(char));
+	duplicate = (char *) malloc ((gnl_strlen(src) + 1) * sizeof(char));
 	if (!duplicate)
 		return (NULL);
 	i = 0;

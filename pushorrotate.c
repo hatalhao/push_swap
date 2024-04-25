@@ -35,21 +35,19 @@ int within_range(int *arr, int start, int end, int number)
 	
 	i = start;
 	while (i < end)
-		{
-			if (arr[i] == number)
-				return (0);
-			i++;
-		}
+	{
+		if (arr[i] == number)
+			return (0);
+		i++;
+	}
 	return  (1);
 }
 
 void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 {
-	// int	i;
 	int	start;
 	int	end;
 	
-	// i = 0;
 	start = 0;
 	end = ft_ranger(size);
 	while (*stack_a && start < size )
@@ -62,17 +60,16 @@ void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 			if (end < size)
 				end++;
 		}
-		else if (within_range(arr, start, end, (*stack_a)->nbr) == 0)
+		else if (!within_range(arr, start, end, (*stack_a)->nbr))
 		{
 			ft_pb(stack_a, stack_b);
 			start++;
 			if (end < size)
 					end++;
-		}		
+		}
 		else
+		
 			ft_rotate(stack_a, "ra");
-		if (end == size && (ft_lstsize(*stack_a)))
-			start--;
 	}
 }
 
@@ -96,7 +93,7 @@ void	refill_stack_a(t_list **stack_a, t_list **stack_b)
 				ft_pa(stack_a, stack_b);
 		else if ((((*stack_b)->next) && get_max(*stack_b) == (*stack_b)->next->nbr))
 			ft_swap(stack_b, "sb");
-		else if (get_index((*stack_b), get_max(*stack_b)) < ft_lstsize(*stack_b) / 2)
+		else if ((get_index((*stack_b), get_max(*stack_b))) < ft_lstsize(*stack_b) / 2)
 			ft_rotate(stack_b, "rb");
 		else
 			ft_reverse_rotate(stack_b, "rrb");	

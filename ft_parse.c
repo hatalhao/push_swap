@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/23 02:48:09 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:47:16 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_parse(int argc, char **argv)
 	i = 1;
 	if (!args[i] || argc < 2)
 	{
-		write(2, "Error 00\n", 10);
+		write(2, "Error\n", 10);
 		exit (0);
 	}
 	else if (argc == 2)
@@ -87,7 +87,7 @@ void	ft_parse(int argc, char **argv)
 				free (args[i--]);
 			}
 			free (args);
-			write(2, "Error 11\n", 10);
+			write(2, "Error\n", 10);
 			exit (1);
 		}
 		i++;
@@ -103,5 +103,4 @@ void	ft_parse(int argc, char **argv)
 		}
 		free (args);
 	}
-	// printf("PARSING ENDED\n");
 }

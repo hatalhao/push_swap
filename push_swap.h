@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:28:07 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/24 03:42:00 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:42:16 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,20 @@ void				ft_reverse_rotate(t_list **stack, char *str);
 
 //	push_swap functions
 
-int					median(int *arr, int half);
 int					ft_ranger(int size);
 int					get_min(t_list	*list);
 int					isduplicate(char **args);
 int 				checker(char const *nptr);
+int					median(int *arr, int half);
 int					ft_sorted(t_list *stack_a);
-
 
 void				sort_three(t_list **stack_a);
 void				sort_four(t_list **stack_a, t_list	**stack_b);
 void				sort_five(t_list **stack_a, t_list	**stack_b);
 
-
 void				ft_parse(int argc, char **argv);
 void				ft_filler(t_list **stack_a, char **argv);
-void				push_swap(t_list **stack_a, t_list **stack_b, char **args);
+// void				push_swap(t_list **stack_a, t_list **stack_b, char **args);
 void				the_sort(t_list **stack_a, t_list **stack_b, char **args, int size);
 void				pushorrotate(t_list **stack_a, t_list **stack_b, int *ar, int size);
 
