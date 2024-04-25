@@ -72,6 +72,25 @@ void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 		else
 			ft_rotate(stack_a, "ra");
 	}
+	// print_list(*stack_a);
+	// print_list(*stack_b);
+
+}
+
+int		ft_ranger(int size)
+{
+	if (size > 5 && size <= 16)
+		return (3);
+	else if (size <= 100)
+		return (15);
+	else if (size <= 500)
+		return (35);
+	else
+		return (45);
+}
+
+void	refill_stack_a(t_list **stack_a, t_list **stack_b)
+{
 	while (*stack_b)
 	{
 		if (get_max(*stack_b) == (*stack_b)->nbr)
@@ -83,30 +102,10 @@ void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 		else
 			ft_reverse_rotate(stack_b, "rrb");	
 	}
-	// print_list(*stack_a);
-	// print_list(*stack_b);
-
-}
-
-
-int		ft_ranger(int size)
-{
-	int	end;
-
-	end = 0;
-	if (size < 20)
-		return (4);
-	if (size < 70)
-		return (16);
-	if (size <= 100)
-		return (25);
-	else if (size > 100 && size <= 500)
-		end = size / 25;
-	return (end);
 }
 
 void	pushorrotate(t_list **stack_a, t_list **stack_b, int *arr, int size)
 {
 	action(stack_a, stack_b, arr, size);
-	
+	refill_stack_a(stack_a, stack_b);
 }
