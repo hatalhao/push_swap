@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 07:36:05 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/02/19 22:23:49 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:01:29 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_read(int fd)
 			break ;
 		}
 		tmp[rd] = '\0';
-		str = ft_join(str, tmp);
+		str = ft_join(str, ft_duplicate(tmp));
 		if (new_line(tmp) >= 0)
 			break ;
 	}
@@ -103,7 +103,6 @@ char	*get_next_line(int fd)
 	if (tmp)
 	{
 		total = ft_join(total, tmp);
-		ft_free(&tmp);
 		remainder = the_line(total, &line);
 	}
 	ft_free(&total);

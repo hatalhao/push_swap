@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:28:07 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 11:52:45 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:09:54 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,12 @@ void				sort_five(t_list **stack_a, t_list **stack_b);
 void				free_args(char **args);
 void				ft_parse(int argc, char **argv);
 void				ft_filler(t_list **stack_a, char **argv);
+void				cases(t_list **stack_a, t_list **stack_b, char **args);
 void				the_sort(t_list **stack_a, t_list **stack_b, char **args,
 						int size);
 void				stacks_fill(t_list **stack_a, t_list **stack_b, int *ar,
 						int size);
+void				free_alloc(t_list **stack_a, t_list **stack_b, char **args);
 
 char				**join_split(char *joined, char **argv);
 
