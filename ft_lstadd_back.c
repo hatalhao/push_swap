@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 03:33:41 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/16 11:45:19 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:04:15 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	iter = ft_lstlast(*lst);
 	iter->next = new;
 	new->next = NULL;
-	new->prev = iter;
 }

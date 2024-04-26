@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 03:36:37 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/03/30 02:35:55 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:04:19 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ t_list	*ft_lstnew(int content)
 		return (NULL);
 	list->nbr = content;
 	list->next = NULL;
-	list->prev = NULL;
 	return (list);
 }

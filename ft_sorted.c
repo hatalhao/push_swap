@@ -6,11 +6,11 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:41 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/18 01:51:42 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:38:19 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 int	ft_sorted(t_list *stack_a)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 11:39:45 by hatalhao          #+#    #+#             */
+/*   Updated: 2024/04/26 11:39:46 by hatalhao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	free_alloc(t_list **stack_a, t_list **stack_b, char **args)
@@ -9,7 +21,7 @@ void	free_alloc(t_list **stack_a, t_list **stack_b, char **args)
 
 void	list_size(t_list **stack_a, t_list **stack_b, char **args)
 {
-	if (ft_lstsize(*stack_a) == 2 && !ft_sorted(*stack_a))
+	if (ft_lstsize(*stack_a) == 2)
 		ft_swap(stack_a, "sa");
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
@@ -21,7 +33,7 @@ void	list_size(t_list **stack_a, t_list **stack_b, char **args)
 		the_sort(stack_a, stack_b, args, ft_lstsize(*stack_a));
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
@@ -32,8 +44,8 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	ft_parse(argc, argv + 1);
-	stack_a = (t_list **) malloc (sizeof(t_list));
-	stack_b = (t_list **) malloc (sizeof(t_list));
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	args = join_split(joined, argv + 1);

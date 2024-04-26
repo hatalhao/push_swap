@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 05:26:14 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:38:52 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	isduplicate(char **args)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (args[i])
 	{
 		j = i + 1;
-		while(args[j])
+		while (args[j])
 		{
-			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+			if (ft_atoi_prime(args[i], args) == ft_atoi_prime(args[j], args))
 				return (0);
 			j++;
 		}
@@ -32,9 +32,9 @@ int	isduplicate(char **args)
 	return (1);
 }
 
-int checker(char const *nptr)
+int	checker(char const *nptr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (nptr[i] == '-' || nptr[i] == '+')
@@ -64,15 +64,15 @@ void	ft_parse(int argc, char **argv)
 	else if (argc > 2)
 	{
 		args = join_split(joined, argv + 1);
-		ft_free (&joined);
+		ft_free(&joined);
 	}
-	while (args[i])
+	while (args && args[i])
 	{
 		if (!(checker(args[i])) || !(isduplicate(args)))
 		{
 			free_args(args);
 			write(2, "Error\n", 7);
-			exit (0);
+			exit(0);
 		}
 		i++;
 	}

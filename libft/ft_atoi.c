@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:24:11 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 02:24:07 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:19:25 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,5 @@ int	ft_atoi(char const *nptr)
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 		r = r * 10 + nptr[i++] - '0';
-	if ((r > INT_MAX) || (((int)r * s) < INT_MIN))
-	{
-		write(2, "Error\n", 7);
-		exit (0);
-	}
 	return ((int)(r * s));
 }

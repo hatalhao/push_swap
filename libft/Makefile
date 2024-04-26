@@ -2,7 +2,7 @@ NAME = libft.a
 
 CC = cc
 
-CFLAGS = -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra #-g3 -fsanitize=address
 
 SRCS = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 ft_strcmp.c ft_atoi.c ft_split.c ft_memcpy.c ft_strdup.c \

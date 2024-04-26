@@ -6,10 +6,11 @@ CC = cc
 
 CFLAGS = -Werror -Wall -Wextra #-g3 -fsanitize=address
 
-SRCS = ft_lstadd_back.c ft_lstsize.c ft_rr.c ft_swap.c find_middle.c  ft_lstadd_front.c \
+SRCS = ft_lstadd_back.c ft_lstsize.c ft_rr.c ft_swap.c ft_lstadd_front.c ft_atoi_prime.c \
 ft_pa.c ft_rrr.c ft_lstclear.c ft_parse.c ft_sort_few.c ft_filler.c ft_lstdelone.c ft_pb.c \
-ft_sorted.c main.c ft_finder.c ft_lstlast.c ft_reverse_rotate.c print_list.c ft_lstnew.c \
-ft_rotate.c ft_ss.c push_swap.c get_min.c join_split.c the_sort.c pushorrotate.c free_args.c
+ft_sorted.c main.c ft_lstlast.c ft_reverse_rotate.c print_list.c ft_lstnew.c \
+ft_rotate.c ft_ss.c get_min.c join_split.c the_sort.c stacks_fill.c free_args.c \
+
 
 OBJS = $(SRCS:.c=.o)
 

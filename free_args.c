@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 02:37:42 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 02:40:34 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:34:20 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_args(char **args)
 	int	i;
 
 	i = 0;
-	while (args[i])
+	while (args && args[i])
 		free(args[i++]);
 	free(args);
 }
