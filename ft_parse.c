@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/25 22:47:16 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 05:26:14 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	isduplicate(char **args)
 	int	i;
 	int j;
 
-	i = 1;
-	j = i + 1;
+	i = 0;
 	while (args[i])
 	{
+		j = i + 1;
 		while(args[j])
 		{
 			if (ft_atoi(args[i]) == ft_atoi(args[j]))
@@ -28,7 +28,6 @@ int	isduplicate(char **args)
 			j++;
 		}
 		i++;
-		j = i + 1;
 	}
 	return (1);
 }
@@ -45,7 +44,6 @@ int checker(char const *nptr)
 	while (nptr[i])
 	{
 		if (nptr[i] < '0' || nptr[i] > '9')
-
 			return (0);
 		i++;
 	}
@@ -55,22 +53,14 @@ int checker(char const *nptr)
 void	ft_parse(int argc, char **argv)
 {
 	int		i;
-	char	**args;
 	char	*joined;
+	char	**args;
 
+	i = 0;
 	joined = NULL;
 	args = argv;
-	i = 1;
-	if (!args[i] || argc < 2)
-	{
-		write(2, "Error\n", 10);
-		exit (0);
-	}
-	else if (argc == 2)
-	{
-		args = ft_split(args[i], ' ');
-		i = 0;
-	}
+	if (argc == 2)
+		args = ft_split(*args, ' ');
 	else if (argc > 2)
 	{
 		args = join_split(joined, argv + 1);
@@ -78,29 +68,13 @@ void	ft_parse(int argc, char **argv)
 	}
 	while (args[i])
 	{
-		if (!(checker(args[i])) || !(isduplicate(argv)))
+		if (!(checker(args[i])) || !(isduplicate(args)))
 		{
-			while ((args[i]))
-			{
-				if (!(args[i]))
-					break ;
-				free (args[i--]);
-			}
-			free (args);
-			write(2, "Error\n", 10);
-			exit (1);
+			free_args(args);
+			write(2, "Error\n", 7);
+			exit (0);
 		}
 		i++;
 	}
-	i--;
-	if (args)
-	{
-		while (args[i] && i > 0)
-		{
-			if (!(args[i]))
-				break ;
-			free (args[i--]);
-		}
-		free (args);
-	}
+	free_args(args);
 }

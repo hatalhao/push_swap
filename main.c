@@ -2,12 +2,7 @@
 
 void	free_alloc(t_list **stack_a, t_list **stack_b, char **args)
 {
-	int	i;
-
-	i = 0;
-	while (args[i])
-		free (args[i++]);
-	free (args);
+	free_args(args);
 	ft_lstclear(stack_a);
 	free(stack_b);
 }
@@ -32,18 +27,16 @@ int main(int argc, char **argv)
 	t_list	**stack_b;
 	char	*joined;
 	char	**args;
-	int		i;
 
 	joined = NULL;
-	i = 1;
 	if (argc < 2)
 		return (-1);
-	ft_parse(argc, argv);
+	ft_parse(argc, argv + 1);
 	stack_a = (t_list **) malloc (sizeof(t_list));
 	stack_b = (t_list **) malloc (sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	args = join_split(joined, argv);
+	args = join_split(joined, argv + 1);
 	ft_filler(stack_a, args);
 	if (ft_sorted(*stack_a))
 	{

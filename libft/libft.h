@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:16:47 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 00:07:39 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 01:25:45 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <stdint.h>
 # include "ft_printf/ft_printf.h"
 # include "gnl/get_next_line.h"
-
 
 int		ft_atoi(char const *nptr);
 int		ft_strcmp(const char *s1, const char *s2);

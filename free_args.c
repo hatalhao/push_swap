@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   free_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 01:24:05 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 01:54:00 by hatalhao         ###   ########.fr       */
+/*   Created: 2024/04/26 02:37:42 by hatalhao          #+#    #+#             */
+/*   Updated: 2024/04/26 02:40:34 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	free_args(char **args)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while ((s1[i] || s2[i]))
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] + (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
+	while (args[i])
+		free(args[i++]);
+	free(args);
 }

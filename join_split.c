@@ -6,7 +6,7 @@ char	**join_split(char *joined, char **argv)
 	char	**args;
 
 	args = NULL;
-	i = 1;
+	i = 0;
 	joined = ft_strdup(argv[i++]);
 	joined = ft_join (joined, ft_strdup(" "));
 	while (argv[i])

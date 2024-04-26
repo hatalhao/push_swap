@@ -68,7 +68,6 @@ void	action(t_list **stack_a, t_list **stack_b, int *arr, int size)
 					end++;
 		}
 		else
-		
 			ft_rotate(stack_a, "ra");
 	}
 }

@@ -6,15 +6,15 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:52:12 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/25 22:41:09 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 01:27:03 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		array_length(int *arr)
+int	array_length(int *arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i])
@@ -25,7 +25,7 @@ int		array_length(int *arr)
 void	swap_array(int *bigger, int *smaller)
 {
 	int	tmp;
-	
+
 	tmp = *bigger;
 	*bigger = *smaller;
 	*smaller = tmp;
@@ -47,10 +47,12 @@ void	fill_array(int **arr, char **args, int size)
 void	the_sort(t_list **stack_a, t_list **stack_b, char **args, int size)
 {
 	int	*arr;
-	int	i = 0;
-	int	j = 0;
+	int	i;
+	int	j;
 
-	arr = (int *) malloc ((size + 1) * sizeof(int)); 
+	i = 0;
+	j = 0;
+	arr = (int *)malloc((size + 1) * sizeof(int));
 	if (!arr)
 		return ;
 	fill_array(&arr, args, size);
@@ -66,5 +68,5 @@ void	the_sort(t_list **stack_a, t_list **stack_b, char **args, int size)
 		j = 0;
 	}
 	pushorrotate(stack_a, stack_b, arr, size);
-	free (arr);
+	free(arr);
 }
