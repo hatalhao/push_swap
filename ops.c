@@ -34,6 +34,8 @@ void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
+	if (!*stack_b)
+		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
 	ft_lstadd_front(stack_a, tmp);
@@ -44,6 +46,8 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
+if (!*stack_a)
+		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	ft_lstadd_front(stack_b, tmp);
