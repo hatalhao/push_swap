@@ -1,5 +1,5 @@
 #!/bin/sh
 read ARGS
 
-./push_swap $ARGS | ./checker_Mac $ARGS
+./push_swap $ARGS | ./checker $ARGS
 echo "\n"

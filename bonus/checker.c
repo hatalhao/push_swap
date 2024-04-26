@@ -12,19 +12,33 @@
 
 #include "push_swap_bonus.h"
 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] + (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+
 int	check_ops(char *str)
 {
-	if (ft_strcmp("ra\n", str))
+	if (!ft_strncmp("ra\n", str,3))
 		return(0);
-	else if (ft_strcmp("sa\n", str))
+	else if (!ft_strncmp("sa\n", str,3))
 		return(0);
-	else if (ft_strcmp("rra\n", str))
+	else if (!ft_strncmp("rra\n", str,4))
 		return(0);
-	else if (ft_strcmp("pb\n", str))
+	else if (!ft_strncmp("pb\n", str,3))
 		return(0);
-	else if (ft_strcmp("pa\n", str))
+	else if (!ft_strncmp("pa\n", str,3))
 		return(0);
-	else if (ft_strcmp("sb\n", str))
+	else if (!ft_strncmp("sb\n", str,3))
 		return(0);
 	return (1); 
 }
@@ -77,6 +91,12 @@ int	main(int argc, char **argv)
 		str = get_next_line(0);
 		if (!str)
 			break ;
+		if (check_ops(str))
+		{
+			free(str);
+			printf("ERROR\n");
+			exit(1);
+		}
 		exec_ops(stack_a, stack_b, str);
 		// free(str);
 	}

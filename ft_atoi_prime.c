@@ -16,7 +16,7 @@ int	ft_atoi_prime(char const *nptr, char **args)
 {
 	int					i;
 	int					s;
-	unsigned long long	r;
+	size_t	r;
 
 	i = 0;
 	s = 1;
@@ -31,12 +31,14 @@ int	ft_atoi_prime(char const *nptr, char **args)
 	else if (nptr[i] == '+')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
-		r = r * 10 + nptr[i++] - '0';
-	if ((r > INT_MAX) || (((int)r * s) < INT_MIN))
 	{
-		free_args(args);
-		write(2, "Error\n", 7);
-		exit (0);
+		r = r * 10 + nptr[i++] - '0';
+		if ((s == 1 && r > 0x7fffffff) || (s == -1 && r > 0x80000000))
+		{
+			free_args(args);
+			write(2, "Error\n", 7);
+			exit (0);
+		}
 	}
 	return ((int)(r * s));
 }
