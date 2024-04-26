@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:39:45 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 11:39:46 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:52:07 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_alloc(t_list **stack_a, t_list **stack_b, char **args)
 	free(stack_b);
 }
 
-void	list_size(t_list **stack_a, t_list **stack_b, char **args)
+void	cases(t_list **stack_a, t_list **stack_b, char **args)
 {
 	if (ft_lstsize(*stack_a) == 2)
 		ft_swap(stack_a, "sa");
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 		ft_lstclear(stack_a);
 		return (free(stack_b), 0);
 	}
-	list_size(stack_a, stack_b, args);
+	cases(stack_a, stack_b, args);
 	free_alloc(stack_a, stack_b, args);
 	return (0);
 }

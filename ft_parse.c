@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 11:38:52 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:53:21 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	isduplicate(char **args)
 	return (1);
 }
 
-int	checker(char const *nptr)
+int	ft_check(char const *nptr)
 {
 	int	i;
 
@@ -68,7 +68,7 @@ void	ft_parse(int argc, char **argv)
 	}
 	while (args && args[i])
 	{
-		if (!(checker(args[i])) || !(isduplicate(args)))
+		if (!(ft_check(args[i])) || !(isduplicate(args)))
 		{
 			free_args(args);
 			write(2, "Error\n", 7);
