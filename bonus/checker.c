@@ -30,27 +30,27 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	check_ops(char *str)
 {
-	if (!ft_strncmp("ra\n", str, 3))
+	if (!ft_strcmp("ra\n", str))
 		return(0);
-	else if (!ft_strncmp("rb\n", str, 3))
+	else if (!ft_strcmp("rb\n", str))
 		return(0);
-	else if (!ft_strncmp("rr\n", str, 3))
+	else if (!ft_strcmp("rr\n", str))
 		return(0);
-	else if (!ft_strncmp("sa\n", str, 3))
+	else if (!ft_strcmp("sa\n", str))
 		return(0);
-	else if (!ft_strncmp("sb\n", str, 3))
+	else if (!ft_strcmp("sb\n", str))
 		return(0);
-	else if (!ft_strncmp("ss\n", str, 3))
+	else if (!ft_strcmp("ss\n", str))
 		return(0);
-	else if (!ft_strncmp("rra\n", str, 4))
+	else if (!ft_strcmp("rra\n", str))
 		return(0);
-	else if (!ft_strncmp("rrb\n", str, 4))
+	else if (!ft_strcmp("rrb\n", str))
 		return(0);
-	else if (!ft_strncmp("rrr\n", str, 4))
+	else if (!ft_strcmp("rrr\n", str))
 		return(0);
-	else if (!ft_strncmp("pb\n", str, 3))
+	else if (!ft_strcmp("pb\n", str))
 		return(0);
-	else if (!ft_strncmp("pa\n", str, 3))
+	else if (!ft_strcmp("pa\n", str))
 		return(0);
 	return (1);
 }
@@ -62,10 +62,10 @@ void	exec_ops(t_list **stack_a, t_list **stack_b, char *str)
 		swap(stack_a);
 	else if (!ft_strcmp("sb\n", str))
 		swap(stack_b);
-	else if (!ft_strcmp("pb\n", str))
-		pb(stack_a, stack_b);
 	else if (!ft_strcmp("pa\n", str))
 		pa(stack_a, stack_b);
+	else if (!ft_strcmp("pb\n", str))
+		pb(stack_a, stack_b);
 	else if (!ft_strcmp("ra\n", str))
 		rotate(stack_a);
 	else if (!ft_strcmp("rb\n", str))

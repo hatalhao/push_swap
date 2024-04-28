@@ -20,7 +20,7 @@ void	ft_filler(t_list **stack_a, char **argv)
 
 	i = 0;
 	args = argv;
-	while (args[i])
+	while (args && args[i])
 	{
 		head = ft_lstnew(ft_atoi(args[i]));
 		head->index = i;

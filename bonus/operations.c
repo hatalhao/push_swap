@@ -17,7 +17,7 @@ void	swap(t_list **first)
 	t_list	*swap;
 	t_list	*link;
 
-	if (!*first || !first)
+	if (!*first || !first || !(*first)->next)
 		return ;
 	link = NULL;
 	if ((*first)->next->next)

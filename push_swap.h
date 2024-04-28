@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:28:07 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 15:09:54 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 05:55:11 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int					get_max(t_list *stack);
 int					get_index(t_list *stack, int max);
 
 int					isduplicate(char **args);
+int					collective_checks(char **args);
 int					ft_check(char const *nptr);
 int					ft_sorted(t_list *stack_a);
 int					ft_atoi_prime(char const *nptr, char **args);
@@ -73,6 +74,6 @@ void				stacks_fill(t_list **stack_a, t_list **stack_b, int *ar,
 						int size);
 void				free_alloc(t_list **stack_a, t_list **stack_b, char **args);
 
-char				**join_split(char *joined, char **argv);
+char				**join_split(char *joined, char **args);
 
 #endif
