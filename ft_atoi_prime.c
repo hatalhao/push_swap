@@ -6,17 +6,33 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 07:06:21 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 12:05:02 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 07:10:50 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	isnumber(char const *arg)
+{
+	int	i;
+
+	i = 0;
+	if (!arg)
+		return (0);
+	while (arg[i] >= '0' && arg[i] <= '9')
+	{
+		if (!(arg[i] >= '0' && arg[i] <= '9'))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	ft_atoi_prime(char const *nptr, char **args)
 {
 	int					i;
 	int					s;
-	size_t	r;
+	long				r;
 
 	i = 0;
 	s = 1;
@@ -33,11 +49,11 @@ int	ft_atoi_prime(char const *nptr, char **args)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		r = r * 10 + nptr[i++] - '0';
-		if ((s == 1 && r > 0x7fffffff) || (s == -1 && r > 0x80000000))
+		if (r > INT_MAX || (r * s) < INT_MIN)
 		{
 			free_args(args);
-			write(2, "Error\n", 7);
-			exit (0);
+			write(2, "Error Prime\n", 13);
+			exit (1);
 		}
 	}
 	return ((int)(r * s));
