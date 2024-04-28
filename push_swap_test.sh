@@ -32,7 +32,7 @@ else
 	printf "${RED}NO EXIST PUSH_SWAP PROGRAM ${DEF_COLOR}\n";
 	exit 0
 fi
-
+	
 if [ $1 == -v ];then
 if [ -z "$2" ];then
 	n=500;

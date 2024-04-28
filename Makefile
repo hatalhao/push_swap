@@ -6,7 +6,7 @@ BONUS = checker
 
 CC = gcc
 
-CFLAGS = -Werror -Wall -Wextra -g3 -fsanitize=address
+CFLAGS = -Werror -Wall -Wextra
 
 SRCS = ft_lstadd_back.c ft_lstsize.c ft_lstadd_front.c ft_atoi_prime.c \
 ops.c ft_lstclear.c ft_parse.c ft_sort_few.c ft_filler.c ft_lstdelone.c \

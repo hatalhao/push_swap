@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 13:23:12 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/29 00:27:27 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,12 @@ void	white_spaces_only(char **arg)
 			j++;
 		if (arg[i][j] == '\0')
 		{
-			write(2, "Error", 5);
+			write(2, "Error\n", 6);
 			exit (1);
 		}
 		j = 0;
 		i++;
 	}
-}
-
-void	print_error(char **args)
-{
-	free_args(args);
-	write(2, "Error\n", 6);
-	exit(1);
 }
 
 int	isduplicate(char **args)
@@ -75,12 +68,27 @@ int	ft_check(char const *nptr)
 	while (nptr[i])
 	{
 		if (nptr[i] < '0' || nptr[i] > '9')
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (1);
+}
+
+void	single_arg_check(char **args)
+{
+	int	i;
+
+	i = 0;
+	white_spaces_only(args);
+	args = ft_split(*args, ' ');
+	while (args[i])
+	{
+		ft_atoi_prime(args[i], args);
+		if (!ft_check(args[i]))
+			print_error(args);
+		i++;
+	}
+	free_args(args);
 }
 
 void	ft_parse(int argc, char **args)
@@ -92,10 +100,8 @@ void	ft_parse(int argc, char **args)
 	joined = NULL;
 	if (argc == 2)
 	{
-		white_spaces_only(args);
+		single_arg_check(args);
 		args = ft_split(*args, ' ');
-		if (ft_atoi_prime(args[0], args) || ft_check(args[0]))
-			print_error(args);
 	}
 	else if (argc > 2)
 	{

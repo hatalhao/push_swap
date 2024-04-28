@@ -6,11 +6,18 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:39:45 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 15:08:18 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/29 00:27:46 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_error(char **args)
+{
+	free_args(args);
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 void	free_alloc(t_list **stack_a, t_list **stack_b, char **args)
 {

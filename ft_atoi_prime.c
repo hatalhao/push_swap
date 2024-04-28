@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 07:06:21 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 13:23:42 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 23:49:04 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,9 @@ void	off_bound(long nb, char **args)
 	if (nb > INT_MAX || nb < INT_MIN)
 	{
 		free_args(args);
-		write(2, "Error", 5);
+		write(2, "Error\n", 6);
 		exit (1);
 	}
-}
-
-int	isnumber(char const *arg)
-{
-	int	i;
-
-	i = 0;
-	if (!arg)
-		return (0);
-	while (arg[i] >= '0' && arg[i] <= '9')
-	{
-		if (!(arg[i] >= '0' && arg[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 int	ft_atoi_prime(char const *nptr, char **args)

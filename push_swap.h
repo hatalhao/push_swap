@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:28:07 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 13:05:26 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/29 00:29:09 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,26 @@ int					get_max(t_list *stack);
 int					get_index(t_list *stack, int max);
 
 int					isduplicate(char **args);
-int					collective_checks(char **args);
 int					ft_check(char const *nptr);
 int					ft_sorted(t_list *stack_a);
 int					ft_atoi_prime(char const *nptr, char **args);
+
+char				**join_split(char *joined, char **args);
 
 void				sort_three(t_list **stack_a);
 void				sort_four(t_list **stack_a, t_list **stack_b);
 void				sort_five(t_list **stack_a, t_list **stack_b);
 
 void				free_args(char **args);
+void				print_error(char **args);
 void				ft_parse(int argc, char **argv);
 void				ft_filler(t_list **stack_a, char **argv);
 void				cases(t_list **stack_a, t_list **stack_b, char **args);
 void				the_sort(t_list **stack_a, t_list **stack_b, char **args,
 						int size);
-void				stacks_fill(t_list **stack_a, t_list **stack_b, int *ar,
+void				stacks_fill(t_list **stack_a, t_list **stack_b, int *arr,
 						int size);
 void				free_alloc(t_list **stack_a, t_list **stack_b, char **args);
 void				white_spaces_only(char **arg);
-
-char				**join_split(char *joined, char **args);
 
 #endif
