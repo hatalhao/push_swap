@@ -16,7 +16,7 @@ join_split.c the_sort.c stacks_fill.c free_args.c collective_checks.c \
 SRCS_BONUS = ft_lstadd_back.c ft_lstsize.c ft_lstadd_front.c ft_atoi_prime.c \
 ops.c ft_lstclear.c ft_parse.c ft_sort_few.c ft_filler.c ft_lstdelone.c \
 ft_sorted.c ft_lstlast.c push_swap.c print_list.c ft_lstnew.c getters.c rotates.c \
-join_split.c the_sort.c stacks_fill.c free_args.c \
+join_split.c the_sort.c stacks_fill.c free_args.c collective_checks.c \
 bonus/operations.c bonus/checker.c bonus/rots.c \
 # collective_checks.c \
 

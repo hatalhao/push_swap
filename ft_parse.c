@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:51:13 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 12:20:40 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:19:35 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ int	ft_check(char const *nptr)
 	while (nptr[i])
 	{
 		if (nptr[i] < '0' || nptr[i] > '9')
+		{
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -94,6 +96,9 @@ void	ft_parse(int argc, char **args)
 	{
 		white_spaces_only(args);
 		args = ft_split(*args, ' ');
+		if (ft_atoi_prime(args[0], args) || ft_check(args[0]))
+			print_error(args);
+		printf("{%s}\n", *args);
 	}
 	else if (argc > 2)
 	{
@@ -106,6 +111,5 @@ void	ft_parse(int argc, char **args)
 		if (!(ft_check(args[i])) || !(isduplicate(args)))
 			print_error(args);
 		i++;
-	}
-	free_args(args);
+	}	free_args(args);
 }
