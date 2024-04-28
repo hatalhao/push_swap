@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 07:06:21 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 13:04:13 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:23:42 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	off_bound(long nb, char **args)
 {
-	// printf("nb == %ld\n", nb);
 	if (nb > INT_MAX || nb < INT_MIN)
 	{
 		free_args(args);
-		// write(2, "Error OFF BOUND\n", 17);
 		write(2, "Error", 5);
 		exit (1);
 	}
