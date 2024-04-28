@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:43:48 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 11:46:49 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:51:01 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_reverse_rotate(t_list **stack, char *str)
 	t_list	*last;
 	t_list	*iter;
 
-	if (!*stack || !stack)
+	if (!*stack || !stack || ft_lstsize(*stack) < 2)
 		return ;
 	iter = *stack;
 	while (iter)
@@ -34,39 +34,39 @@ void	ft_reverse_rotate(t_list **stack, char *str)
 		ft_printf("%s\n", str);
 }
 
-void	ft_rotate(t_list **stackb, char *str)
+void	ft_rotate(t_list **stack, char *str)
 {
 	t_list	*head;
 	t_list	*iter;
 
-	if (!*stackb || !stackb)
+	if (!*stack || !stack || ft_lstsize(*stack) < 2)
 		return ;
-	head = *stackb;
-	*stackb = (*stackb)->next;
+	head = *stack;
+	*stack = (*stack)->next;
 	head->next = NULL;
-	iter = *stackb;
+	iter = *stack;
 	while (iter)
 	{
 		if (!(iter->next))
-			ft_lstadd_back(stackb, head);
+			ft_lstadd_back(stack, head);
 		iter = iter->next;
 	}
 	if (str)
 		ft_printf("%s\n", str);
 }
 
-void	ft_rr(t_list **stacka, t_list **stackb)
+void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
-	if (!*stacka || !stacka || !*stackb || !stackb)
+	if (!*stack_a || !stack_a || !*stack_b || !stack_b)
 		return ;
-	ft_rotate(stacka, NULL);
-	ft_rotate(stackb, NULL);
+	ft_rotate(stack_a, NULL);
+	ft_rotate(stack_b, NULL);
 	ft_printf("rr\n");
 }
 
-void	ft_rrr(t_list **stacka, t_list **stackb)
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-	ft_reverse_rotate(stacka, NULL);
-	ft_reverse_rotate(stackb, NULL);
+	ft_reverse_rotate(stack_a, NULL);
+	ft_reverse_rotate(stack_b, NULL);
 	ft_printf("rrr\n");
 }

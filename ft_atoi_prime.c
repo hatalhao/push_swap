@@ -6,11 +6,23 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 07:06:21 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 07:10:50 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 12:25:06 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	off_bound(long nb, char **args)
+{
+	// printf("nb == %ld\n", nb);
+	if (nb > INT_MAX || nb < INT_MIN)
+	{
+		free_args(args);
+		// write(2, "Error OFF BOUND\n", 17);
+		write(2, "Error", 5);
+		exit (1);
+	}
+}
 
 int	isnumber(char const *arg)
 {
@@ -49,12 +61,7 @@ int	ft_atoi_prime(char const *nptr, char **args)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		r = r * 10 + nptr[i++] - '0';
-		if (r > INT_MAX || (r * s) < INT_MIN)
-		{
-			free_args(args);
-			write(2, "Error Prime\n", 13);
-			exit (1);
-		}
+		off_bound((r * s), args);
 	}
 	return ((int)(r * s));
 }

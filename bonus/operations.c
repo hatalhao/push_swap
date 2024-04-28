@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:46:36 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 14:38:40 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:53:25 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-	if(!*stack_b)
+	if (!*stack_b)
 		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;

@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:46:36 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 14:42:43 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:52:01 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-if (!*stack_a)
+	if (!*stack_a)
 		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;

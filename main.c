@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:08:34 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 16:17:27 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:44:31 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	joined = NULL;
 	if (argc < 2)
 		return (0);
-	ft_parse(argc, argv);
+	ft_parse(argc, argv + 1);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;

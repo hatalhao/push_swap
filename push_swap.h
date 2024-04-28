@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:28:07 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/28 05:55:11 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 11:24:15 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int					ft_lstsize(t_list *lst);
 /*	instructions	*/
 
 void				ft_swap(t_list **first, char *str);
-void				ft_ss(t_list **firsta, t_list **firstb);
+void				ft_ss(t_list **first_a, t_list **first_b);
 
 void				ft_pa(t_list **stack_a, t_list **stack_b);
 void				ft_pb(t_list **stack_a, t_list **stack_b);
 
 void				ft_rotate(t_list **stack, char *str);
-void				ft_rr(t_list **stacka, t_list **stackb);
+void				ft_rr(t_list **stack_a, t_list **stack_b);
 
-void				ft_rrr(t_list **stacka, t_list **stackb);
+void				ft_rrr(t_list **stack_a, t_list **stack_b);
 void				ft_reverse_rotate(t_list **stack, char *str);
 
 /*	push_swap functions */
@@ -73,6 +73,7 @@ void				the_sort(t_list **stack_a, t_list **stack_b, char **args,
 void				stacks_fill(t_list **stack_a, t_list **stack_b, int *ar,
 						int size);
 void				free_alloc(t_list **stack_a, t_list **stack_b, char **args);
+void				white_spaces_only(char **arg);
 
 char				**join_split(char *joined, char **args);
 

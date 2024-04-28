@@ -6,7 +6,7 @@
 /*   By: hatalhao <hatalhao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 05:23:33 by hatalhao          #+#    #+#             */
-/*   Updated: 2024/04/26 16:48:59 by hatalhao         ###   ########.fr       */
+/*   Updated: 2024/04/28 12:16:08 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,30 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	check_ops(char *str)
 {
 	if (!ft_strcmp("ra\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("rb\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("rr\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("sa\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("sb\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("ss\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("rra\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("rrb\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("rrr\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("pb\n", str))
-		return(0);
+		return (0);
 	else if (!ft_strcmp("pa\n", str))
-		return(0);
+		return (0);
 	return (1);
 }
+
 void	exec_ops(t_list **stack_a, t_list **stack_b, char *str)
 {
 	if (!ft_strcmp("ss\n", str))
@@ -80,14 +81,38 @@ void	exec_ops(t_list **stack_a, t_list **stack_b, char *str)
 		rrr(stack_a, stack_b);
 }
 
+void	checker(t_list **stack_a, t_list **stack_b, char **args)
+{
+	char	*str;
+
+	while (1)
+	{
+		str = get_next_line(0);
+		if (!str)
+			break ;
+		if (check_ops(str))
+		{
+			free_alloc(stack_a, stack_b, args);
+			free(str);
+			write(2, "Error", 5);
+			exit(1);
+		}
+		exec_ops(stack_a, stack_b, str);
+		free(str);
+	}
+	if (ft_sorted(*stack_a) && !*stack_b)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
 	char	**args;
 	char	*joined;
-	char	*str;
-	
+
 	joined = NULL;
 	if (argc < 2)
 		return (0);
@@ -99,31 +124,7 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	args = join_split(joined, args);
 	ft_filler(stack_a, args);
-	while (1)
-	{
-		str = get_next_line(0);
-		if (!str)
-			break ;
-		if (check_ops(str))
-		{
-			free_alloc(stack_a, stack_b, args);
-			free(str);
-			write(2, "ERROR\n", 7);
-			exit(1);
-		}
-		exec_ops(stack_a, stack_b, str);
-		free(str);
-	}
-	if (ft_sorted(*stack_a) && !*stack_b)
-	{
-		ft_printf("OK\n");
-		print_list(*stack_a);
-	}
-	else
-	{
-		ft_printf("KO\n");
-		print_list(*stack_a);
-	}
+	checker(stack_a, stack_b, args);
 	free_alloc(stack_a, stack_b, args);
 	return (0);
 }
