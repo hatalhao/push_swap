@@ -31,8 +31,8 @@ int	main(int argc, char **argv)
 	ft_filler(stack_a, args);
 	if (ft_sorted(*stack_a))
 	{
-		ft_lstclear(stack_a);
-		return (free(stack_b), 0);
+		free_alloc(stack_a, stack_b, args);
+		return (0);
 	}
 	cases(stack_a, stack_b, args);
 	free_alloc(stack_a, stack_b, args);
